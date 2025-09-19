@@ -27,10 +27,10 @@ export default function PriceRange({ onApply }: Props) {
 
   return (
     <div className="w-full flex justify-end">
-    <section className="w-full max-w-[392px]">
-      <h3 className="text-xl sm:text-2xl font-semibold text-darkblue mb-3">
-        Select price
-      </h3>
+      <section className="max-w-[392px]">
+        <h3 className="text-xl sm:text-2xl font-semibold text-darkblue mb-3">
+          Select price
+        </h3>
 
       {/* ჩარჩო */}
       <div className="relative rounded-xl border border-slate-300 bg-white p-3 sm:p-4 shadow-sm">

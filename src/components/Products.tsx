@@ -1,4 +1,4 @@
-import { MdKeyboardArrowDown, MdTune } from "react-icons/md";
+import {  MdTune } from "react-icons/md";
 import ProductCard from "./ProductCard";
 import Product1 from "/assets/img/product/productimg1.png"
 import Product2 from "/assets/img/product/productimg2.png"
@@ -13,6 +13,7 @@ import Product10 from "/assets/img/product/productimg10.png"
 import { useState, useMemo } from "react";
 import Filter from "./PriceRange";
 import Sort, { type SortOption } from "./SortBy";
+import FilterChip from "./FilterChip";
 // Product data structure
 interface Product {
   id: number;
@@ -114,6 +115,20 @@ export default function Products() {
            <Sort value={sortBy} onChange={handleSortChange} options={sortOptions} />
          </div>
        )}
+       {
+        (priceRange.min !== undefined || priceRange.max !== undefined) && (
+          <div className="mt-4 sm:mt-6">
+            <FilterChip 
+              label={`Price: ${priceRange.min || 0} - ${priceRange.max || '∞'}`} 
+              onRemove={() => {
+                setPriceRange({});
+                setIsFilterOpen(false);
+              }} 
+              onClick={() => setIsFilterOpen(true)} 
+            />
+          </div>
+        )
+       }
        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5 mt-4 sm:mt-6 md:mt-8">
          {filteredAndSortedProducts.length > 0 ? (
            filteredAndSortedProducts.map((product) => (

@@ -10,7 +10,7 @@ type Props = {
 export default function FilterChip({ label, onRemove, onClick, className = "" }: Props) {
   return (
     <div
-      className={`inline-flex items-center justify-center gap-[6px] rounded-full border border-slate-300 bg-white pl-4 pr-[10px] py-2 text-sm text-slate-800 shadow-sm max-w-[115px]
+      className={`flex items-center justify-center gap-[6px] rounded-full border border-slate-300 bg-white pl-4 pr-[10px] py-2 text-sm text-slate-800 shadow-sm max-w-[115px]
                   hover:border-slate-400 ${onClick ? "cursor-pointer" : ""} ${className}`}
       role="button"
       tabIndex={0}

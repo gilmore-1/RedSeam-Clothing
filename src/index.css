@@ -8,6 +8,7 @@
 
 :root {
   --Dark-blue: #10151F;
+  --Dark-blue-2: #3E424A;
 }
 
 @layer utilities {
@@ -19,6 +20,15 @@
   }
   .border-darkblue {
     border-color: var(--Dark-blue);
+  }
+  .text-darkblue-2 {
+    color: var(--Dark-blue-2);
+  }
+  .bg-darkblue-2 {
+    background-color: var(--Dark-blue-2);
+  }
+  .border-darkblue-2 {
+    border-color: var(--Dark-blue-2);
   }
 }
 
